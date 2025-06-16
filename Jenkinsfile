@@ -16,7 +16,6 @@ pipeline {
                     npm --version
                     npm ci
                     npm run build
-                    npm run test
                     ls -la
                 '''
             }
@@ -31,7 +30,7 @@ pipeline {
           steps {
             sh '''
                 echo "Running tests..."
-                test - f build/index.html
+                test -f build/index.html
                 npm run test
             '''
           }
